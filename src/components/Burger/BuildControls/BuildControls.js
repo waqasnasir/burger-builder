@@ -6,7 +6,8 @@ const buildControls = ({
   removeIngredient,
   ingredients,
   price,
-  disableOrder
+  disableOrder,
+  order
 }) => {
   const controls = [
     { label: "Salad", type: "salad" },
@@ -28,7 +29,11 @@ const buildControls = ({
           disabled={ingredients[ctrl.type] === 0}
         />
       ))}
-      <button className={classes.OrderButton} disabled={disableOrder}>
+      <button
+        className={classes.OrderButton}
+        disabled={disableOrder}
+        onClick={order}
+      >
         ORDER NOW
       </button>
     </div>
